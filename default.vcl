@@ -4,7 +4,7 @@ vcl 4.0;
 import std;
 import directors;
 
-backend server1 { # Define one backend
+backend default { # Define one backend
   .host = "127.0.0.1";    # IP or Hostname of backend
   .port = "8080";           # Port Apache or whatever is listening
 }
@@ -30,7 +30,7 @@ sub vcl_init {
   # Typically used to initialize VMODs.
 
   new vdir = directors.round_robin();
-  vdir.add_backend(server1);
+  vdir.add_backend(default);
   # vdir.add_backend(server...);
   # vdir.add_backend(servern);
 }
