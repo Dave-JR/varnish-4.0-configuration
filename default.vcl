@@ -5,8 +5,8 @@ import std;
 import directors;
 
 backend default { # Define one backend
-  .host = "127.0.0.1";    # IP or Hostname of backend
-  .port = "8080";           # Port Apache or whatever is listening
+  .host = "127.0.0.1";
+  .port = "8080";
 }
 
 acl purge {
